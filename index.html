@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CSSメモ帳</title>
+</head>
+<body>
+
+    <h1>CSSメモ帳</h1>
+
+
+    <div class="tukaikata">
+        <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+            <a style="cursor:pointer;">▼ 使い方 (クリックすると展開します)</a>
+            </div>
+            <div id="open" style="display:none;clear:both;">
+
+                <p>このメモ帳はcssのコードをまとめるためのものです。</p>
+                <p>1. コード・名前・説明を入力します <b>(コードのみ入力必須です)</b>。</p>
+                <p>2. 入力を終えたら「保存」ボタンをクリックします。</p>
+                <p>3. すると「メモ一覧」に追加されます。</p>
+                <p>4. チェックボックスにチェックを入れて「実行」ボタンを押すと、サンプルが出ます。</p>
+                <p>5. 「コピー」ボタンを押すと、そのサンプルをクリップボードにコピーできます。</p>
+                <p> ※チェックは一つずつ行うことをお勧めします (間に","が入ってしまいます)。</p>
+                <p> ※「削除」ボタンを押すとメモ帳を消すことができます。</p>
+                </div>
+      
+
+
+    </div>
+
+    <div class="button">
+    <div class="buttonhozon">
+        <h3>コード入力
+    <input type="button" value="保存" onclick="clickBtn0()"/></h3></div>
+
+    <div class="buttonjikkou">
+    <h3>メモ一覧
+        <input type="button" value="実行" onclick="clickBtn1()"/>
+        <input type="button" value="削除" onclick="clickBtnclear()"/>
+        
+</h3></div>
+    </div>
+
+    <div class="box">
+    <div class="list1">
+
+        <table class="listtable">
+
+            <tr>
+                <th>コード</th>
+                <td><input type="text" id="code"
+                    style="width:328px;height:36px" placeholder="例: font-weight:bold; (必須)"></td>
+            </tr>
+            <tr>
+                <th>名前</th>
+                <td><input type="text" id="name" 
+                    style="width:328px;height:36px" placeholder="例: フォントの太さ"></td>
+            </tr>
+            <tr>
+                <th>説明</th>
+                <td><textarea id="setumei" style="width:328px;height:36px" placeholder="例: フォントの太さを変更できる。lighterにすると細くできるし、数値を入れて調整も可能"></textarea></td>
+             
+            
+            </tr>
+
+        </table>
+        <div id="hyouka"></div>
+    </div>
+
+    
+
+
+    <div class="itiran">
+        <div class="mokuji1">
+</div>
+
+        <table id="list">
+
+            <tr>
+                <th data-id="codesort" sortable>コード</th>
+                
+                <th data-id="namesort" sortable>名前</th>
+
+                <th data-id="setumeisort" sortable>説明</th>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+
+<div class="sotowaku">
+    <div id="samplecode">
+        <div class="copybuttonsoto">
+        <input type="button" value="コピー" onclick="clickBtncopy()"/ class="copybutton"></div>
+        <div id="css" >
+        .sample{
+            <div id="hannei"></div>
+        }
+    </div>
+    </div>
+    </div>
+
+
+    
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/kiroku.js"></script>
+
+</body>
+</html>
